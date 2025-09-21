@@ -12,7 +12,12 @@ import {
 } from "@chakra-ui/react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { BsTelephone, BsInstagram, BsEnvelope } from "react-icons/bs";
+import {
+  BsTelephone,
+  BsInstagram,
+  BsEnvelope,
+  BsCloudSun,
+} from "react-icons/bs";
 
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -61,7 +66,7 @@ export const MainHeader = () => {
 
           {/** User Profile Menu */}
           <Menu.Root>
-            <Menu.Trigger rounded="full" focusRing="outside">
+            {/* <Menu.Trigger rounded="full" focusRing="outside">
               <Avatar.Root size="sm">
                 <Avatar.Fallback name="User Name" />
               </Avatar.Root>
@@ -74,7 +79,8 @@ export const MainHeader = () => {
                   <Menu.Item value="logout">Logout</Menu.Item>
                 </Menu.Content>
               </Menu.Positioner>
-            </Portal>
+            </Portal> */}
+            <BsCloudSun size={20} />
           </Menu.Root>
         </Flex>
 
