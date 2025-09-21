@@ -7,7 +7,10 @@ export default function Home() {
       id: "sect-about",
       title: "About",
       content: (
-        <section style={{ height: "500px", backgroundColor: "red" }}></section>
+        <section
+          key="sect-about"
+          style={{ height: "500px", backgroundColor: "red" }}
+        ></section>
       ),
     },
     {
@@ -15,6 +18,7 @@ export default function Home() {
       title: "Services",
       content: (
         <section
+          key="sect-service"
           style={{ height: "500px", backgroundColor: "yellow" }}
         ></section>
       ),
@@ -23,7 +27,10 @@ export default function Home() {
       id: "sect-gallery",
       title: "Gallery",
       content: (
-        <section style={{ height: "500px", backgroundColor: "blue" }}></section>
+        <section
+          key="sect-gallery"
+          style={{ height: "500px", backgroundColor: "blue" }}
+        ></section>
       ),
     },
   ];

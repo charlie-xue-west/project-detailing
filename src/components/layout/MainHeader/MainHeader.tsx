@@ -64,7 +64,6 @@ export const MainHeader = () => {
             <Menu.Trigger rounded="full" focusRing="outside">
               <Avatar.Root size="sm">
                 <Avatar.Fallback name="User Name" />
-                <Avatar.Image src="" />
               </Avatar.Root>
             </Menu.Trigger>
             <Portal>
