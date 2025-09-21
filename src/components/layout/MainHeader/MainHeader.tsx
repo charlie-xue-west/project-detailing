@@ -11,6 +11,8 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
+import { Link as ChakraLink } from "@chakra-ui/react";
+
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   BsTelephone,
@@ -32,93 +34,101 @@ export const MainHeader = () => {
       p={4}
       style={{ position: "sticky", top: 0, zIndex: 100 }}
     >
-      <Flex direction={{ base: "column" }} gap={4}>
-        <Flex align="center" justify="space-between">
-          <Box hideFrom={"lg"}>
-            <Menu.Root>
-              <Menu.Trigger asChild>
-                <IconButton variant="ghost" size="md" aria-label="Menu">
-                  <HamburgerIcon boxSize={5} />
-                </IconButton>
-              </Menu.Trigger>
-              <Portal>
-                <Menu.Positioner>
-                  <Menu.Content>
-                    <Menu.Item value="new-txt">About</Menu.Item>
-                    <Menu.Item value="new-file">Services</Menu.Item>
-                    <Menu.Item value="new-file">Gallery</Menu.Item>
-                  </Menu.Content>
-                </Menu.Positioner>
-              </Portal>
-            </Menu.Root>
-          </Box>
-
-          <NextLink href="/">
-            <Image asChild>
-              <NextImage
-                src="/project-detailing-white.svg"
-                alt="Project Detailing Logo"
-                width={200}
-                height={60}
-              />
-            </Image>
-          </NextLink>
-
-          {/** User Profile Menu */}
+      <Flex gap={4} justifyContent={"space-between"} alignItems={"center"}>
+        <Box hideFrom={"lg"}>
           <Menu.Root>
-            {/* <Menu.Trigger rounded="full" focusRing="outside">
-              <Avatar.Root size="sm">
-                <Avatar.Fallback name="User Name" />
-              </Avatar.Root>
+            <Menu.Trigger asChild>
+              <IconButton variant="ghost" size="md" aria-label="Menu">
+                <HamburgerIcon boxSize={5} />
+              </IconButton>
             </Menu.Trigger>
             <Portal>
               <Menu.Positioner>
                 <Menu.Content>
-                  <Menu.Item value="account">Account</Menu.Item>
-                  <Menu.Item value="settings">Settings</Menu.Item>
-                  <Menu.Item value="logout">Logout</Menu.Item>
+                  <Menu.Item value="new-txt">About</Menu.Item>
+                  <Menu.Item value="new-file">Services</Menu.Item>
+                  <Menu.Item value="new-file">Gallery</Menu.Item>
                 </Menu.Content>
               </Menu.Positioner>
-            </Portal> */}
-            <BsCloudSun size={20} />
+            </Portal>
           </Menu.Root>
+        </Box>
+
+        {/** Logo */}
+        <NextLink href="/">
+          <Image asChild hideFrom={"md"}>
+            <NextImage
+              src="/project-detailing-white.svg"
+              alt="Project Detailing Logo"
+              width={200}
+              height={60}
+            />
+          </Image>
+          <Image asChild hideBelow={"md"} hideFrom={"lg"}>
+            <NextImage
+              src="/project-detailing-white.svg"
+              alt="Project Detailing Logo"
+              width={350}
+              height={60}
+            />
+          </Image>
+          <Image asChild hideBelow={"lg"}>
+            <NextImage
+              src="/project-detailing-white.svg"
+              alt="Project Detailing Logo"
+              width={500}
+              height={60}
+            />
+          </Image>
+        </NextLink>
+
+        <Flex
+          align="center"
+          gap={16}
+          hideBelow={"lg"}
+          fontSize={{ base: "sm", md: "md", lg: "24px" }}
+        >
+          <ChakraLink asChild>
+            <NextLink href="/about">About</NextLink>
+          </ChakraLink>
+          <ChakraLink asChild>
+            <NextLink href="/services">Services</NextLink>
+          </ChakraLink>
+          <ChakraLink asChild>
+            <NextLink href="/gallery">Gallery</NextLink>
+          </ChakraLink>
         </Flex>
 
         <Flex
-          flexDirection={{ base: "column", md: "row" }}
-          gap={{ base: 2, md: 8 }}
           alignItems={"center"}
           justifyContent={"center"}
-          fontSize={{ base: "sm", md: "md" }}
+          gap={{ base: 4, md: 8 }}
         >
-          <Flex alignItems={"center"} justifyContent={"center"} gap={8}>
-            <NextLink
-              href="tel:+19191111111"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                textWrap: "nowrap",
-              }}
-            >
-              <BsTelephone size={20} />
-              919-111-1111
-            </NextLink>
+          <NextLink
+            href="tel:+19191111111"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              textWrap: "nowrap",
+            }}
+          >
+            <BsTelephone size={20} />
+          </NextLink>
 
-            <NextLink
-              href="https://www.instagram.com/project.detailing_/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "8px",
-                textWrap: "nowrap",
-              }}
-            >
-              <BsInstagram size={20} /> project.detailing_
-            </NextLink>
-          </Flex>
+          <NextLink
+            href="https://www.instagram.com/project.detailing_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              textWrap: "nowrap",
+            }}
+          >
+            <BsInstagram size={20} />
+          </NextLink>
 
           <NextLink
             href="mailto:Project.detailing919@gmail.com"
@@ -128,7 +138,7 @@ export const MainHeader = () => {
               gap: "8px",
             }}
           >
-            <BsEnvelope size={20} /> project.detailing919@gmail.com
+            <BsEnvelope size={20} />
           </NextLink>
         </Flex>
       </Flex>
