@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { FaSquarePhone, FaInstagram, FaRegEnvelope } from "react-icons/fa6";
+import { BsTelephone, BsInstagram, BsEnvelope } from "react-icons/bs";
 
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -77,6 +77,7 @@ export const MainHeader = () => {
             </Portal>
           </Menu.Root>
         </Flex>
+
         <Flex
           flexDirection={{ base: "column", md: "row" }}
           gap={{ base: 2, md: 8 }}
@@ -94,7 +95,7 @@ export const MainHeader = () => {
                 textWrap: "nowrap",
               }}
             >
-              <FaSquarePhone size={20} />
+              <BsTelephone size={20} />
               919-111-1111
             </NextLink>
 
@@ -109,7 +110,7 @@ export const MainHeader = () => {
                 textWrap: "nowrap",
               }}
             >
-              <FaInstagram size={20} /> project.detailing_
+              <BsInstagram size={20} /> project.detailing_
             </NextLink>
           </Flex>
 
@@ -121,7 +122,7 @@ export const MainHeader = () => {
               gap: "8px",
             }}
           >
-            <FaRegEnvelope size={20} /> project.detailing919@gmail.com
+            <BsEnvelope size={20} /> project.detailing919@gmail.com
           </NextLink>
         </Flex>
       </Flex>
