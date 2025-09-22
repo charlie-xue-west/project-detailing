@@ -25,7 +25,8 @@ export const MainHeader = () => {
     <Box
       bg="black"
       w="100%"
-      p={4}
+      px={{ base: 4, md: 6, lg: 8 }}
+      py={{ base: 4, md: 4, lg: 6 }}
       style={{ position: "sticky", top: 0, zIndex: 100 }}
     >
       <Flex gap={4} justifyContent={"space-between"} alignItems={"center"}>
