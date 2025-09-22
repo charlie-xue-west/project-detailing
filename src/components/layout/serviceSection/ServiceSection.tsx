@@ -18,7 +18,11 @@ export const ServiceSection = () => {
         Our Services
       </Heading>
 
-      <Flex flexDirection={{ base: "column", lg: "row" }} gap={4}>
+      <Flex
+        flexDirection={{ base: "column", lg: "row" }}
+        gap={4}
+        justifyContent={"center"}
+      >
         <Box borderWidth={2} borderColor={"#d31920"} px={16} borderRadius={16}>
           <Heading
             as={"h3"}

@@ -29,7 +29,11 @@ export const MainHeader = () => {
       py={{ base: 4, md: 4, lg: 6 }}
       style={{ position: "sticky", top: 0, zIndex: 100 }}
     >
-      <Flex gap={4} justifyContent={"space-between"} alignItems={"center"}>
+      <Flex
+        gap={{ base: 6, md: 8, lg: 10 }}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
         <Box hideFrom={"lg"}>
           <Menu.Root>
             <Menu.Trigger asChild>
