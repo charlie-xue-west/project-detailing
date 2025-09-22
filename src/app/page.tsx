@@ -13,10 +13,14 @@ export default function Home() {
       id: "sect-service",
       title: "Services",
       content: (
-        <section
-          key="sect-service"
-          style={{ height: "500px", backgroundColor: "yellow" }}
-        ></section>
+        <Box
+          key="sect-about"
+          as={"section"}
+          p={4}
+          justifyContent={"center"}
+          textAlign={"center"}
+          bg={"black"}
+        ></Box>
       ),
     },
     {
@@ -27,11 +31,9 @@ export default function Home() {
           key="sect-about"
           as={"section"}
           p={4}
-          color="black"
           justifyContent={"center"}
           textAlign={"center"}
-          borderRadius={16}
-          backgroundColor={"gray.100"}
+          bg={"black"}
         >
           <Flex
             flexDir={"column"}
@@ -42,10 +44,11 @@ export default function Home() {
             <Heading
               as="h2"
               size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
+              color={"#ededed"}
             >
               About Us
             </Heading>
-            <Text>
+            <Text color={"#ededed"}>
               Alex loved cars for as long as he can remember. Now he shares that
               passion and care for them with all of his clients.
             </Text>
@@ -95,8 +98,7 @@ export default function Home() {
                 />
               </Image>
             </Flex>
-
-            <Text>Meet Alex and his assistant Nico!</Text>
+            <Text color={"#ededed"}>Meet Alex and his assistant Nico!</Text>
           </Flex>
         </Box>
       ),
@@ -106,10 +108,14 @@ export default function Home() {
       id: "sect-gallery",
       title: "Gallery",
       content: (
-        <section
+        <Box
           key="sect-gallery"
-          style={{ height: "500px", backgroundColor: "blue" }}
-        ></section>
+          as={"section"}
+          p={4}
+          justifyContent={"center"}
+          textAlign={"center"}
+          bg={"black"}
+        ></Box>
       ),
     },
   ];
@@ -118,11 +124,12 @@ export default function Home() {
       <header>
         <MainHeader />
       </header>
-      <Box as="main" flex="1" w="100%" bg="black">
+      <Box as="main" flex="1" w="100%" bg="#ededed">
         <Container
-          p={4}
+          p={2}
           maxW={"vw"}
-          gap={4}
+          height={"auto"}
+          // gap={2}
           display={"flex"}
           flexDir={"column"}
         >
