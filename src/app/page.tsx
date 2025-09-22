@@ -30,7 +30,7 @@ export default function Home() {
           color="black"
           justifyContent={"center"}
           textAlign={"center"}
-          borderRadius={8}
+          borderRadius={16}
           backgroundColor={"gray.100"}
         >
           <Flex
@@ -63,7 +63,7 @@ export default function Home() {
                 gap={2}
                 hideBelow={"lg"}
               >
-                <Image asChild borderRadius={8} maxHeight={"316px"}>
+                <Image asChild borderRadius={16} maxHeight={"316px"}>
                   <NextImage
                     src={foamTerminate}
                     alt="Foam Terminator"
@@ -73,7 +73,7 @@ export default function Home() {
                 </Image>
                 <Image
                   asChild
-                  borderRadius={8}
+                  borderRadius={16}
                   maxWidth={"480px"}
                   maxHeight={"316px"}
                 >
@@ -86,7 +86,7 @@ export default function Home() {
                 </Image>
               </Flex>
 
-              <Image asChild borderRadius={8}>
+              <Image asChild borderRadius={16}>
                 <NextImage
                   src={alexAndNico}
                   alt="Alex and Nico"
