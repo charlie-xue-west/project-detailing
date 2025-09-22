@@ -8,18 +8,12 @@ import {
   Image,
   Menu,
   Portal,
-  Avatar,
 } from "@chakra-ui/react";
 
 import { Link as ChakraLink } from "@chakra-ui/react";
 
 import { HamburgerIcon } from "@chakra-ui/icons";
-import {
-  BsTelephone,
-  BsInstagram,
-  BsEnvelope,
-  BsCloudSun,
-} from "react-icons/bs";
+import { BsTelephone, BsInstagram, BsEnvelope } from "react-icons/bs";
 
 import NextImage from "next/image";
 import NextLink from "next/link";
