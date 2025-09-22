@@ -49,8 +49,8 @@ export default function Home() {
               About Us
             </Heading>
             <Text color={"#ededed"}>
-              Alex loved cars for as long as he can remember. Now he shares that
-              passion and care for them with all of his clients.
+              Alex has loved cars since he was a boy, now he shares that same
+              passion and care with all of his clients.
             </Text>
             <Flex
               flexDir={"row"}
