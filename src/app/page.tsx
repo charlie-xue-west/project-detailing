@@ -3,7 +3,9 @@ import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 
 import { Image } from "@chakra-ui/react";
 import NextImage from "next/image";
-import alexAndNico from "@/assets/about-us.jpeg";
+import alexAndNico from "@/assets/about-us-desktop.jpeg";
+import foamTerminate from "@/assets/foam-terminate.jpg";
+import cleanTerminate from "@/assets/clean-terminate.jpg";
 
 export default function Home() {
   const sections = [
@@ -31,22 +33,69 @@ export default function Home() {
           borderRadius={8}
           backgroundColor={"gray.100"}
         >
-          <Flex flexDir={"column"} gap={4} alignItems={"center"}>
-            <Heading as="h2" size="xl">
+          <Flex
+            flexDir={"column"}
+            gap={4}
+            alignItems={"center"}
+            fontSize={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
+          >
+            <Heading
+              as="h2"
+              size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
+            >
               About Us
             </Heading>
             <Text>
               Alex loved cars for as long as he can remember. Now he shares that
-              passion with all of his clients.
+              passion and care for them with all of his clients.
             </Text>
-            <Image asChild width={"100%"} borderRadius={8}>
-              <NextImage
-                src={alexAndNico}
-                alt="Alex and Nico"
-                width={200}
-                height={60}
-              />
-            </Image>
+            <Flex
+              flexDir={"row"}
+              gap={2}
+              alignItems={"center"}
+              width={"100%"}
+              maxWidth={"conta"}
+              justifyContent={"center"}
+            >
+              <Flex
+                flexDir={"column"}
+                alignItems={"center"}
+                gap={2}
+                hideBelow={"lg"}
+              >
+                <Image asChild borderRadius={8} maxHeight={"316px"}>
+                  <NextImage
+                    src={foamTerminate}
+                    alt="Foam Terminator"
+                    width={480}
+                    height={320}
+                  />
+                </Image>
+                <Image
+                  asChild
+                  borderRadius={8}
+                  maxWidth={"480px"}
+                  maxHeight={"316px"}
+                >
+                  <NextImage
+                    src={cleanTerminate}
+                    alt="Clean Terminator"
+                    width={480}
+                    height={320}
+                  />
+                </Image>
+              </Flex>
+
+              <Image asChild borderRadius={8}>
+                <NextImage
+                  src={alexAndNico}
+                  alt="Alex and Nico"
+                  width={480}
+                  height={320}
+                />
+              </Image>
+            </Flex>
+
             <Text>Meet Alex and his assistant Nico!</Text>
           </Flex>
         </Box>
