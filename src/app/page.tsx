@@ -1,5 +1,10 @@
-import { AboutSection, MainHeader, ServiceSection } from "@/components";
-import { Box, Container, Heading } from "@chakra-ui/react";
+import {
+  AboutSection,
+  GallerySection,
+  MainHeader,
+  ServiceSection,
+} from "@/components";
+import { Box, Container } from "@chakra-ui/react";
 
 export default function Home() {
   const sections = [
@@ -17,23 +22,7 @@ export default function Home() {
     {
       id: "sect-gallery",
       title: "Gallery",
-      content: (
-        <Box
-          key="sect-gallery"
-          as={"section"}
-          p={4}
-          justifyContent={"center"}
-          textAlign={"center"}
-          bg={"black"}
-        >
-          <Heading
-            size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
-            color={"#ededed"}
-          >
-            Gallery
-          </Heading>
-        </Box>
-      ),
+      content: <GallerySection />,
     },
   ];
   return (
