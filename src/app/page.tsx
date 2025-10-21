@@ -11,18 +11,18 @@ export default function Home() {
     {
       id: "sect-service",
       title: "Services",
-      content: <ServiceSection />,
+      content: <ServiceSection key="sect-service" />,
     },
     {
       id: "sect-about",
       title: "About",
-      content: <AboutSection />,
+      content: <AboutSection key="sect-about" />,
     },
 
     {
       id: "sect-gallery",
       title: "Gallery",
-      content: <GallerySection />,
+      content: <GallerySection key="sect-gallery" />,
     },
   ];
   return (
