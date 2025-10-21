@@ -54,30 +54,18 @@ export const MainHeader = () => {
 
         {/** Logo */}
         <NextLink href="/">
-          <Image asChild hideFrom={"md"}>
-            <NextImage
-              src="/project-detailing-white.svg"
-              alt="Project Detailing Logo"
-              width={200}
-              height={60}
-            />
-          </Image>
-          <Image asChild hideBelow={"md"} hideFrom={"lg"}>
-            <NextImage
-              src="/project-detailing-white.svg"
-              alt="Project Detailing Logo"
-              width={350}
-              height={60}
-            />
-          </Image>
-          <Image asChild hideBelow={"lg"}>
-            <NextImage
-              src="/project-detailing-white.svg"
-              alt="Project Detailing Logo"
-              width={500}
-              height={60}
-            />
-          </Image>
+          <NextImage
+            src="/project-detailing-white.svg"
+            alt="Project Detailing Logo"
+            sizes="(max-width: 768px) 180px,
+           (max-width: 1024px) 260px,
+            380px"
+            style={{
+              width: "100%",
+              height: "auto",
+              maxWidth: "380px",
+            }}
+          />
         </NextLink>
 
         <Flex
