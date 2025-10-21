@@ -19,6 +19,7 @@ export const ServiceCard = ({ title, services }: ServiceCardProps) => {
       py={{ base: 6, md: 8, lg: 10 }}
       maxWidth={"800px"}
       height={{ base: "auto", lg: "420px" }}
+      width={"100%"}
     >
       <Heading
         as={"h3"}
@@ -29,7 +30,11 @@ export const ServiceCard = ({ title, services }: ServiceCardProps) => {
         {title}
       </Heading>
 
-      <Flex direction={{ base: "column", md: "row" }} gap={8}>
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        gap={8}
+        justifyContent={"space-between"}
+      >
         {services?.map(({ type, descriptions, pricing }) => (
           <Box key={type}>
             <Heading
