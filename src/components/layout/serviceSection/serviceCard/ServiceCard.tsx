@@ -1,16 +1,16 @@
 import { Box, Flex, Heading, List } from "@chakra-ui/react";
 type ServiceTypes = {
   type: string;
-  descriptions: string[];
-  pricing: string;
+  descriptions?: string[];
+  price?: string;
 };
 type ServiceCardProps = {
   title: string;
   services?: ServiceTypes[];
-  maxWidth?: string;
+  price?: string;
 };
 
-export const ServiceCard = ({ title, services }: ServiceCardProps) => {
+export const ServiceCard = ({ title, services, price }: ServiceCardProps) => {
   return (
     <Box
       borderWidth={2}
@@ -35,7 +35,7 @@ export const ServiceCard = ({ title, services }: ServiceCardProps) => {
         gap={8}
         justifyContent={"space-between"}
       >
-        {services?.map(({ type, descriptions, pricing }) => (
+        {services?.map(({ type, descriptions }) => (
           <Box key={type}>
             <Heading
               as={"h4"}

@@ -56,14 +56,21 @@ export const ServiceSection = () => {
   ];
 
   const otherServices = [
-    { type: "Engine Bay Cleaning" },
-    { type: "Headlight Restoration" },
+    { type: "Engine Bay Cleaning", price: "small/medium: $50.00 Large: $80" },
+    { type: "Headlight Restoration", price: "small/medium: $60.00 Large: $80" },
   ];
 
   const stages = [
-    { title: "Stage 1", services: stage1Services },
-    { title: "Stage 2", services: stage2Services },
-    // { title: "Additional Services", services: otherServices },
+    {
+      title: "Stage 1",
+      services: stage1Services,
+      price: "2 Door: $120 4 Door: $140 SM SUV/Truck: $150 SUV/Truck: $170",
+    },
+    {
+      title: "Stage 2",
+      services: stage2Services,
+      price: "2 Door: $250 4 Door: $300 SM SUV/Truck: $375 SUV/Truck: $450",
+    },
   ];
 
   return (
@@ -94,6 +101,7 @@ export const ServiceSection = () => {
               key={stage.title}
               title={stage.title}
               services={stage.services}
+              price={stage.price}
             />
           ))}
         </Flex>
