@@ -65,6 +65,8 @@ export const MainHeader = () => {
               height: "auto",
               maxWidth: "380px",
             }}
+            width={380}
+            height={80}
           />
         </NextLink>
 
