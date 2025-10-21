@@ -12,8 +12,7 @@ import {
 
 import { Link as ChakraLink } from "@chakra-ui/react";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
-import { BsTelephone, BsInstagram, BsEnvelope } from "react-icons/bs";
+import { BsList, BsTelephone, BsInstagram, BsEnvelope } from "react-icons/bs";
 
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -38,7 +37,7 @@ export const MainHeader = () => {
           <Menu.Root>
             <Menu.Trigger asChild>
               <IconButton variant="ghost" size="md" aria-label="Menu">
-                <HamburgerIcon boxSize={5} />
+                <BsList size={5} />
               </IconButton>
             </Menu.Trigger>
             <Portal>
