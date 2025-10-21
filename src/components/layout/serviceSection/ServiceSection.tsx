@@ -1,6 +1,71 @@
 import { Box, Flex, Heading, List } from "@chakra-ui/react";
+import { ServiceCard } from "./serviceCard/ServiceCard";
+import { title } from "process";
 
 export const ServiceSection = () => {
+  const stage1Services = [
+    {
+      type: "Exterior",
+      descriptions: [
+        "Premium hand wash and towel dry",
+        "Deep clean wheels, tires, and fender liners",
+        "Fuel door and door jamb cleaning",
+        "Crystal-clear glass and mirror finish",
+        "Tire shine and conditioning treatment",
+      ],
+    },
+    {
+      type: "Interior",
+      descriptions: [
+        "Full interior vacuum (seats, carpets, mats, and trunk)",
+        "Glass and mirror cleaning",
+        "Dashboard, console, and panel wipe down",
+        "Clean door jambs and entry touch points",
+      ],
+    },
+  ];
+
+  const stage2Services = [
+    {
+      type: "Exterior",
+      descriptions: [
+        "Premium hand wash and towel dry",
+        "Deep clean wheels, tires, and fender liners",
+        "Fuel door and door jamb cleaning",
+        "Crystal-clear glass and mirror finish",
+        "Tire shine and conditioning treatment",
+        "Clay bar treatment for a smooth paint finish",
+        "Wax or sealant application for shine and protection",
+        "Dress tires and fender liners",
+        "Polish exhaust tips",
+        "Restore and dress exterior trim",
+      ],
+    },
+    {
+      type: "Interior",
+      descriptions: [
+        "Full interior vacuum (seats, carpets, mats, and trunk)",
+        "Glass and mirror cleaning",
+        "Dashboard, console, and panel wipe down",
+        "Clean door jambs and entry touch points",
+        "Steam clean plastic and vinyl panels",
+        "Shampoo and steam clean carpets and fabric seats",
+        "Clean and condition leather surfaces",
+      ],
+    },
+  ];
+
+  const otherServices = [
+    { type: "Engine Bay Cleaning" },
+    { type: "Headlight Restoration" },
+  ];
+
+  const stages = [
+    { title: "Stage 1", services: stage1Services },
+    { title: "Stage 2", services: stage2Services },
+    // { title: "Additional Services", services: otherServices },
+  ];
+
   return (
     <Box
       key="sect-about"
@@ -17,83 +82,22 @@ export const ServiceSection = () => {
       >
         Our Services
       </Heading>
-
-      <Flex
-        flexDirection={{ base: "column", lg: "row" }}
-        gap={4}
-        justifyContent={"center"}
-      >
-        <Box borderWidth={2} borderColor={"#d31920"} px={16} borderRadius={16}>
-          <Heading
-            as={"h3"}
-            size={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
-            color={"#ededed"}
-          >
-            Stage 1
-          </Heading>
-          <Flex direction={{ base: "column", lg: "row" }} gap={2}>
-            <Box>
-              <Heading
-                as={"h4"}
-                size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
-              >
-                Interior
-              </Heading>
-              <List.Root>
-                <List.Item>Item 1</List.Item>
-                <List.Item>Item 2</List.Item>
-              </List.Root>
-            </Box>
-            <Box>
-              <Heading
-                as={"h4"}
-                size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
-              >
-                Exterior
-              </Heading>
-              <List.Root>
-                <List.Item>Item 1</List.Item>
-                <List.Item>Item 2</List.Item>
-              </List.Root>
-            </Box>
-          </Flex>
-        </Box>
-
-        <Box borderWidth={2} borderColor={"#d31920"} px={16} borderRadius={16}>
-          <Heading
-            as={"h3"}
-            size={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
-            color={"#ededed"}
-          >
-            Stage 2
-          </Heading>
-          <Flex direction={{ base: "column", lg: "row" }} gap={2}>
-            <Box>
-              <Heading
-                as={"h4"}
-                size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
-              >
-                Interior
-              </Heading>
-              <List.Root>
-                <List.Item>Item 1</List.Item>
-                <List.Item>Item 2</List.Item>
-              </List.Root>
-            </Box>
-            <Box>
-              <Heading
-                as={"h4"}
-                size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
-              >
-                Exterior
-              </Heading>
-              <List.Root>
-                <List.Item>Item 1</List.Item>
-                <List.Item>Item 2</List.Item>
-              </List.Root>
-            </Box>
-          </Flex>
-        </Box>
+      <Flex direction={"column"} gap={8} mt={8} alignItems={"center"}>
+        <Flex
+          flexDirection={{ base: "column", "2xl": "row" }}
+          gap={4}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          {stages.map((stage) => (
+            <ServiceCard
+              key={stage.title}
+              title={stage.title}
+              services={stage.services}
+            />
+          ))}
+        </Flex>
+        <ServiceCard title="Additional Services" services={otherServices} />
       </Flex>
     </Box>
   );

@@ -5,7 +5,6 @@ import {
   Flex,
   IconButton,
   useDisclosure,
-  Image,
   Menu,
   Portal,
 } from "@chakra-ui/react";
@@ -54,20 +53,24 @@ export const MainHeader = () => {
 
         {/** Logo */}
         <NextLink href="/">
-          <NextImage
-            src="/project-detailing-white.svg"
-            alt="Project Detailing Logo"
-            sizes="(max-width: 768px) 180px,
-           (max-width: 1024px) 260px,
-            380px"
-            style={{
-              width: "100%",
-              height: "auto",
-              maxWidth: "380px",
-            }}
-            width={380}
-            height={80}
-          />
+          <Box
+            as="span"
+            display="inline-block"
+            w={{ base: "160px", md: "240px", lg: "320px" }} // responsive max width
+            lineHeight={0}
+          >
+            <NextImage
+              src="/project-detailing-white.svg"
+              alt="Project Detailing"
+              width={320} // intrinsic dimensions (any consistent ratio)
+              height={64}
+              sizes="(max-width: 768px) 160px, (max-width: 992px) 240px, 320px"
+              style={{ width: "100%", height: "auto" }}
+              priority
+              fetchPriority="high"
+              decoding="async"
+            />
+          </Box>
         </NextLink>
 
         <Flex
