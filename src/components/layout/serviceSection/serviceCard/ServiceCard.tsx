@@ -24,8 +24,12 @@ export const ServiceCard = ({
   price,
   ...rest
 }: ServiceCardProps) => {
+  const headingId = `service-${title.toLowerCase().replace(/\s+/g, "-")}`;
+
   return (
     <Box
+      as={"article"}
+      aria-label={headingId}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={"space-between"}
@@ -39,6 +43,7 @@ export const ServiceCard = ({
     >
       <VStack>
         <Heading
+          id={headingId}
           as={"h3"}
           size={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
           color={"#d31920"}
