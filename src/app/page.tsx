@@ -32,10 +32,10 @@ export default function Home() {
       </header>
       <Box as="main" flex="1" w="100%" bg="#ededed">
         <Container
-          p={2}
+          p={1}
           maxW={"vw"}
           height={"auto"}
-          gap={2}
+          gap={1}
           display={"flex"}
           flexDir={"column"}
         >
