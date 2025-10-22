@@ -26,16 +26,16 @@ export const ServiceSection = () => {
             base: "1fr",
             lg: "repeat(2, 1fr)",
           }}
-          templateRows={{ base: "1fr" }}
           gap={4}
           justifyContent={"center"}
         >
-          {services.map((service) => (
+          {services.map((service, i) => (
             <ServiceCard
               key={service.title}
               title={service.title}
               services={service.services}
               price={service.price}
+              gridColumn={i === services.length - 1 ? "1 / -1" : "auto"}
             />
           ))}
         </Grid>

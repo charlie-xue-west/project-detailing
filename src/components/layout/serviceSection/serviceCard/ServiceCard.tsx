@@ -1,25 +1,30 @@
-import { Box, Flex, Heading, List, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, List, Text, BoxProps } from "@chakra-ui/react";
 type ServiceTypes = {
   type?: string;
   descriptions?: string[];
   price?: string;
 };
-type ServiceCardProps = {
+type ServiceCardProps = BoxProps & {
   title: string;
   services?: ServiceTypes[];
   price?: string;
 };
 
-export const ServiceCard = ({ title, services, price }: ServiceCardProps) => {
+export const ServiceCard = ({
+  title,
+  services,
+  price,
+  ...rest
+}: ServiceCardProps) => {
   return (
     <Box
       borderWidth={2}
       borderColor={"white"}
       px={{ base: 8 }}
       py={{ base: 6 }}
-      maxWidth={"800px"}
       height={"100%"}
       width={"100%"}
+      {...rest}
     >
       <Flex flexDirection={"column"} alignItems={"center"} gap={4}>
         <Heading
