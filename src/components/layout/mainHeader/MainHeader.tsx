@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  IconButton,
-  useDisclosure,
-  Menu,
-  Portal,
-} from "@chakra-ui/react";
+import { Box, Flex, IconButton, Menu, Portal } from "@chakra-ui/react";
 
 import { Link as ChakraLink } from "@chakra-ui/react";
 
@@ -17,7 +10,32 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 
 export const MainHeader = () => {
-  const { open, onToggle } = useDisclosure();
+  const menuItems = [
+    { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
+    { label: "Gallery", href: "/gallery" },
+  ];
+  const socialLinks = [
+    {
+      label: "Phone",
+      href: "tel:+19191111111",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      icon: BsTelephone,
+    },
+    {
+      label: "Instagram",
+      href: "https://www.instagram.com/project.detailing_/",
+      rel: "noopener noreferrer",
+      target: "_blank",
+      icon: BsInstagram,
+    },
+    {
+      label: "Email",
+      href: "mailto:Project.detailing919@gmail.com",
+      icon: BsEnvelope,
+    },
+  ];
 
   return (
     <Box
@@ -42,9 +60,11 @@ export const MainHeader = () => {
             <Portal>
               <Menu.Positioner>
                 <Menu.Content>
-                  <Menu.Item value="new-txt">About</Menu.Item>
-                  <Menu.Item value="new-file">Services</Menu.Item>
-                  <Menu.Item value="new-file">Gallery</Menu.Item>
+                  {menuItems.map(({ label, href }) => (
+                    <Menu.Item key={label} value={label}>
+                      <NextLink href={href}>{label}</NextLink>
+                    </Menu.Item>
+                  ))}
                 </Menu.Content>
               </Menu.Positioner>
             </Portal>
@@ -79,15 +99,11 @@ export const MainHeader = () => {
           hideBelow={"lg"}
           fontSize={{ base: "sm", md: "md", lg: "24px" }}
         >
-          <ChakraLink asChild>
-            <NextLink href="/about">About</NextLink>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <NextLink href="/services">Services</NextLink>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <NextLink href="/gallery">Gallery</NextLink>
-          </ChakraLink>
+          {menuItems.map(({ label, href }) => (
+            <ChakraLink key={label} asChild color={"white"}>
+              <NextLink href={href}>{label}</NextLink>
+            </ChakraLink>
+          ))}
         </Flex>
 
         <Flex
@@ -95,42 +111,18 @@ export const MainHeader = () => {
           justifyContent={"center"}
           gap={{ base: 4, md: 8 }}
         >
-          <NextLink
-            href="tel:+19191111111"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              textWrap: "nowrap",
-            }}
-          >
-            <BsTelephone size={20} />
-          </NextLink>
-
-          <NextLink
-            href="https://www.instagram.com/project.detailing_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              textWrap: "nowrap",
-            }}
-          >
-            <BsInstagram size={20} />
-          </NextLink>
-
-          <NextLink
-            href="mailto:Project.detailing919@gmail.com"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-            }}
-          >
-            <BsEnvelope size={20} />
-          </NextLink>
+          {socialLinks.map(({ label, href, target, rel, icon: Icon }) => (
+            <ChakraLink key={label} asChild color={"white"}>
+              <NextLink
+                href={href}
+                target={target}
+                rel={rel}
+                aria-label={label}
+              >
+                {<Icon size={20} />}
+              </NextLink>
+            </ChakraLink>
+          ))}
         </Flex>
       </Flex>
     </Box>
