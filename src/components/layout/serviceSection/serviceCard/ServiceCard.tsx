@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, List, Text } from "@chakra-ui/react";
 type ServiceTypes = {
-  type: string;
+  type?: string;
   descriptions?: string[];
   price?: string;
 };
@@ -18,7 +18,7 @@ export const ServiceCard = ({ title, services, price }: ServiceCardProps) => {
       px={{ base: 8 }}
       py={{ base: 6 }}
       maxWidth={"800px"}
-      height={{ base: "auto", lg: "420px" }}
+      height={"100%"}
       width={"100%"}
     >
       <Flex flexDirection={"column"} alignItems={"center"} gap={4}>
@@ -37,12 +37,14 @@ export const ServiceCard = ({ title, services, price }: ServiceCardProps) => {
         >
           {services?.map(({ type, descriptions, price }) => (
             <Box key={type}>
-              <Heading
-                as={"h4"}
-                size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
-              >
-                {type}
-              </Heading>
+              {type && (
+                <Heading
+                  as={"h4"}
+                  size={{ base: "sm", md: "md", lg: "lg", xl: "xl" }}
+                >
+                  {type}
+                </Heading>
+              )}
               {descriptions && (
                 <List.Root textAlign={"start"}>
                   {descriptions.map((description) => (

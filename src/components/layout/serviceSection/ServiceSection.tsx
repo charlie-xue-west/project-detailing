@@ -1,24 +1,8 @@
-import { Box, Flex, Heading, List } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading } from "@chakra-ui/react";
 import { ServiceCard } from "./serviceCard/ServiceCard";
-import { otherServices, stage1Services, stage2Services } from "./serviceData";
+import { services } from "./serviceData";
 
 export const ServiceSection = () => {
-  const stages = [
-    {
-      title: "Stage 1",
-      services: stage1Services,
-      price:
-        "2 Door: $120; 4 Door: $140; Small SUV/Truck: $150; SUV/Truck: $170",
-    },
-    {
-      title: "Stage 2",
-      services: stage2Services,
-      price:
-        "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck: $450",
-    },
-  ];
-  const additionalServices = otherServices;
-
   return (
     <Box
       key="sect-about"
@@ -37,33 +21,24 @@ export const ServiceSection = () => {
         >
           Our Services
         </Heading>
-        <Flex
-          direction={"column"}
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            lg: "repeat(2, 1fr)",
+          }}
+          templateRows={{ base: "1fr" }}
           gap={4}
-          alignItems={"center"}
           justifyContent={"center"}
-          maxWidth={{ base: "442px", md: "100%" }}
         >
-          <Flex
-            flexDirection={{ base: "column", "2xl": "row" }}
-            gap={4}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            {stages.map((stage) => (
-              <ServiceCard
-                key={stage.title}
-                title={stage.title}
-                services={stage.services}
-                price={stage.price}
-              />
-            ))}
-          </Flex>
-          <ServiceCard
-            title="Additional Services"
-            services={additionalServices}
-          />
-        </Flex>
+          {services.map((service) => (
+            <ServiceCard
+              key={service.title}
+              title={service.title}
+              services={service.services}
+              price={service.price}
+            />
+          ))}
+        </Grid>
       </Flex>
     </Box>
   );

@@ -1,4 +1,4 @@
-export const stage1Services = [
+const stage1Services = [
   {
     type: "Exterior",
     descriptions: [
@@ -20,7 +20,7 @@ export const stage1Services = [
   },
 ];
 
-export const stage2Services = [
+const stage2Services = [
   {
     type: "Exterior",
     descriptions: [
@@ -50,12 +50,34 @@ export const stage2Services = [
   },
 ];
 
-export const standAloneServices = [];
-
-export const otherServices = [
+const otherServices = [
   { type: "Engine Bay Cleaning", price: "Small/Medium: $50.00; Large: $80" },
   {
     type: "Headlight Restoration",
     price: "Small/Medium: $60.00; Large: $80",
   },
+];
+
+export const services = [
+  {
+    title: "Stage 1",
+    services: stage1Services,
+    price: "2 Door: $120; 4 Door: $140; Small SUV/Truck: $150; SUV/Truck: $170",
+  },
+  {
+    title: "Stage 2",
+    services: stage2Services,
+    price: "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck: $450",
+  },
+  {
+    title: "Wash and Wax",
+    services: [{ descriptions: stage2Services[0].descriptions }],
+    price: "2 Door: $120; 4 Door: $140; Small SUV/Truck: $160; SUV/Truck:$200",
+  },
+  {
+    title: "Deep Interior Detailing",
+    services: [{ descriptions: stage2Services[1].descriptions }],
+    price: "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck:$450",
+  },
+  { title: "Additional Services", services: otherServices },
 ];
