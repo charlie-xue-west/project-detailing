@@ -56,20 +56,25 @@ export const ServiceSection = () => {
   ];
 
   const otherServices = [
-    { type: "Engine Bay Cleaning", price: "small/medium: $50.00 Large: $80" },
-    { type: "Headlight Restoration", price: "small/medium: $60.00 Large: $80" },
+    { type: "Engine Bay Cleaning", price: "Small/Medium: $50.00; Large: $80" },
+    {
+      type: "Headlight Restoration",
+      price: "Small/Medium: $60.00; Large: $80",
+    },
   ];
 
   const stages = [
     {
       title: "Stage 1",
       services: stage1Services,
-      price: "2 Door: $120 4 Door: $140 SM SUV/Truck: $150 SUV/Truck: $170",
+      price:
+        "2 Door: $120; 4 Door: $140; Small SUV/Truck: $150; SUV/Truck: $170",
     },
     {
       title: "Stage 2",
       services: stage2Services,
-      price: "2 Door: $250 4 Door: $300 SM SUV/Truck: $375 SUV/Truck: $450",
+      price:
+        "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck: $450",
     },
   ];
 
@@ -79,33 +84,42 @@ export const ServiceSection = () => {
       as={"section"}
       p={4}
       justifyContent={"center"}
+      alignItems={"center"}
       textAlign={"center"}
       bg={"black"}
     >
-      <Heading
-        as={"h2"}
-        size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
-        color={"#ededed"}
-      >
-        Our Services
-      </Heading>
-      <Flex direction={"column"} gap={8} mt={8} alignItems={"center"}>
-        <Flex
-          flexDirection={{ base: "column", "2xl": "row" }}
-          gap={4}
-          justifyContent={"center"}
-          alignItems={"center"}
+      <Flex flexDirection={"column"} alignItems={"center"} gap={4}>
+        <Heading
+          as={"h2"}
+          size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
+          color={"#ededed"}
         >
-          {stages.map((stage) => (
-            <ServiceCard
-              key={stage.title}
-              title={stage.title}
-              services={stage.services}
-              price={stage.price}
-            />
-          ))}
+          Our Services
+        </Heading>
+        <Flex
+          direction={"column"}
+          gap={4}
+          alignItems={"center"}
+          justifyContent={"center"}
+          maxWidth={{ base: "442px", md: "100%" }}
+        >
+          <Flex
+            flexDirection={{ base: "column", "2xl": "row" }}
+            gap={4}
+            justifyContent={"center"}
+            alignItems={"center"}
+          >
+            {stages.map((stage) => (
+              <ServiceCard
+                key={stage.title}
+                title={stage.title}
+                services={stage.services}
+                price={stage.price}
+              />
+            ))}
+          </Flex>
+          <ServiceCard title="Additional Services" services={otherServices} />
         </Flex>
-        <ServiceCard title="Additional Services" services={otherServices} />
       </Flex>
     </Box>
   );
