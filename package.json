@@ -1,6 +1,9 @@
 {
   "name": "project-detailing",
   "version": "0.1.0",
+  "homepage": "https://project-detailing-alpha.vercel.app/",
+  "license": "MIT",
+  "author": "Charlie Xue",
   "private": true,
   "scripts": {
     "dev": "next dev",
