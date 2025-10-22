@@ -11,8 +11,8 @@ import NextLink from "next/link";
 
 export const MainHeader = () => {
   const menuItems = [
-    { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },
   ];
   const socialLinks = [
@@ -39,11 +39,13 @@ export const MainHeader = () => {
 
   return (
     <Box
+      as={"header"}
       bg="black"
       w="100%"
       px={{ base: 4, md: 6, lg: 8 }}
       py={{ base: 4, md: 4, lg: 6 }}
-      style={{ position: "sticky", top: 0, zIndex: 100 }}
+      position={"sticky"}
+      style={{ top: 0, zIndex: 100 }}
     >
       <Flex
         gap={{ base: 6, md: 8, lg: 10 }}

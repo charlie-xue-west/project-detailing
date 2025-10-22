@@ -27,9 +27,7 @@ export default function Home() {
   ];
   return (
     <Box minH="100vh" display="flex" flexDirection="column">
-      <header>
-        <MainHeader />
-      </header>
+      <MainHeader />
       <Box as="main" flex="1" w="100%" bg="#ededed">
         <Container
           p={1}
