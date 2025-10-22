@@ -82,7 +82,7 @@ export const services = [
     title: "Stage 2",
     services: stage2Services,
     packagePrices: [
-      { vehicleType: "2-door", price: "$250" },
+      { vehicleType: "2-Door", price: "$250" },
       { vehicleType: "4-Door", price: "$300" },
       { vehicleType: "Small SUV/Truck", price: "$375" },
       { vehicleType: "SUV/Truck", price: "$450" },
@@ -92,7 +92,7 @@ export const services = [
     title: "Wash and Wax",
     services: [{ descriptions: stage2Services[0].descriptions }],
     packagePrices: [
-      { vehicleType: "2-door", price: "$120" },
+      { vehicleType: "2-Door", price: "$120" },
       { vehicleType: "4-Door", price: "$140" },
       { vehicleType: "Small SUV/Truck", price: "$160" },
       { vehicleType: "SUV/Truck", price: "$200" },
@@ -102,7 +102,7 @@ export const services = [
     title: "Deep Interior Detailing",
     services: [{ descriptions: stage2Services[1].descriptions }],
     packagePrices: [
-      { vehicleType: "2-door", price: "$250" },
+      { vehicleType: "2-Door", price: "$250" },
       { vehicleType: "4-Door", price: "$300" },
       { vehicleType: "Small SUV/Truck", price: "$375" },
       { vehicleType: "SUV/Truck", price: "$450" },
