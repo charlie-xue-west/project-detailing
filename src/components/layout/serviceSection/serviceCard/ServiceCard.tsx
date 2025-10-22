@@ -32,6 +32,7 @@ export const ServiceCard = ({
       aria-label={headingId}
       display={"flex"}
       flexDirection={"column"}
+      gap={4}
       justifyContent={"space-between"}
       borderWidth={2}
       borderColor={"white"}
