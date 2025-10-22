@@ -1,4 +1,12 @@
-import { Box, Flex, Heading, List, Text, BoxProps } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  List,
+  Text,
+  BoxProps,
+  VStack,
+} from "@chakra-ui/react";
 type ServiceTypes = {
   type?: string;
   descriptions?: string[];
@@ -6,7 +14,7 @@ type ServiceTypes = {
 };
 type ServiceCardProps = BoxProps & {
   title: string;
-  services?: ServiceTypes[];
+  services: ServiceTypes[];
   price?: string;
 };
 
@@ -18,6 +26,9 @@ export const ServiceCard = ({
 }: ServiceCardProps) => {
   return (
     <Box
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={"space-between"}
       borderWidth={2}
       borderColor={"white"}
       px={{ base: 8 }}
@@ -26,7 +37,7 @@ export const ServiceCard = ({
       width={"100%"}
       {...rest}
     >
-      <Flex flexDirection={"column"} alignItems={"center"} gap={4}>
+      <VStack>
         <Heading
           as={"h3"}
           size={{ base: "md", md: "lg", lg: "xl", xl: "2xl" }}
@@ -40,8 +51,8 @@ export const ServiceCard = ({
           gap={{ base: 4, md: 8 }}
           justifyContent={"space-between"}
         >
-          {services?.map(({ type, descriptions, price }) => (
-            <Box key={type}>
+          {services.map(({ type, descriptions, price }) => (
+            <Box key={type || title}>
               {type && (
                 <Heading
                   as={"h4"}
@@ -61,9 +72,9 @@ export const ServiceCard = ({
             </Box>
           ))}
         </Flex>
+      </VStack>
 
-        {price && <Text color={"#d31920"}>{price}</Text>}
-      </Flex>
+      {price && <Text color={"#d31920"}>{price}</Text>}
     </Box>
   );
 };
