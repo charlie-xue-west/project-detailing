@@ -34,7 +34,7 @@ export const ServiceSection = () => {
               key={service.title}
               title={service.title}
               services={service.services}
-              price={service.price}
+              packagePrices={service.packagePrices}
               gridColumn={i === services.length - 1 ? "1 / -1" : "auto"}
             />
           ))}

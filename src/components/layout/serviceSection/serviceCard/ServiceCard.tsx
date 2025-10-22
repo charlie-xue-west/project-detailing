@@ -7,21 +7,26 @@ import {
   BoxProps,
   VStack,
 } from "@chakra-ui/react";
+
+type PriceTypes = {
+  vehicleType: string;
+  price: string;
+};
 type ServiceTypes = {
   type?: string;
   descriptions?: string[];
-  price?: string;
+  individualPrices?: PriceTypes[];
 };
 type ServiceCardProps = BoxProps & {
   title: string;
   services: ServiceTypes[];
-  price?: string;
+  packagePrices?: PriceTypes[];
 };
 
 export const ServiceCard = ({
   title,
   services,
-  price,
+  packagePrices,
   ...rest
 }: ServiceCardProps) => {
   const headingId = `service-${title.toLowerCase().replace(/\s+/g, "-")}`;
@@ -57,7 +62,7 @@ export const ServiceCard = ({
           gap={{ base: 4, md: 8 }}
           justifyContent={"space-between"}
         >
-          {services.map(({ type, descriptions, price }) => (
+          {services.map(({ type, descriptions, individualPrices }) => (
             <Box key={type || title}>
               {type && (
                 <Heading
@@ -74,13 +79,29 @@ export const ServiceCard = ({
                   ))}
                 </List.Root>
               )}
-              {price && <Text color={"#d31920"}>{price}</Text>}
+              {individualPrices && (
+                <Flex gap={4} justifyContent={"center"} alignItems={"center"}>
+                  {individualPrices.map(({ vehicleType, price }) => (
+                    <Text key={vehicleType} color={"#d31920"}>
+                      {vehicleType}: {price}
+                    </Text>
+                  ))}
+                </Flex>
+              )}
             </Box>
           ))}
         </Flex>
       </VStack>
 
-      {price && <Text color={"#d31920"}>{price}</Text>}
+      {packagePrices && (
+        <Flex gap={4} justifyContent={"center"} alignItems={"center"}>
+          {packagePrices.map(({ vehicleType, price }) => (
+            <Text key={vehicleType} color={"#d31920"}>
+              {vehicleType}: {price}
+            </Text>
+          ))}
+        </Flex>
+      )}
     </Box>
   );
 };

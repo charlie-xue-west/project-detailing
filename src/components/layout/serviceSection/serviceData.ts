@@ -51,10 +51,19 @@ const stage2Services = [
 ];
 
 const otherServices = [
-  { type: "Engine Bay Cleaning", price: "Small/Medium: $50.00; Large: $80" },
+  {
+    type: "Engine Bay Cleaning",
+    individualPrices: [
+      { vehicleType: "Small/Medium", price: "$50.00" },
+      { vehicleType: "Large", price: "$80" },
+    ],
+  },
   {
     type: "Headlight Restoration",
-    price: "Small/Medium: $60.00; Large: $80",
+    individualPrices: [
+      { vehicleType: "Small/Medium", price: "$60.00" },
+      { vehicleType: "Large", price: "$80" },
+    ],
   },
 ];
 
@@ -62,22 +71,42 @@ export const services = [
   {
     title: "Stage 1",
     services: stage1Services,
-    price: "2 Door: $120; 4 Door: $140; Small SUV/Truck: $150; SUV/Truck: $170",
+    packagePrices: [
+      { vehicleType: "2 Door", price: "$120" },
+      { vehicleType: "4 Door", price: "$140" },
+      { vehicleType: "Small SUV/Truck", price: "$150" },
+      { vehicleType: "SUV/Truck", price: "$170" },
+    ],
   },
   {
     title: "Stage 2",
     services: stage2Services,
-    price: "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck: $450",
+    packagePrices: [
+      { vehicleType: "2 Door", price: "$250" },
+      { vehicleType: "4 Door", price: "$300" },
+      { vehicleType: "Small SUV/Truck", price: "$375" },
+      { vehicleType: "SUV/Truck", price: "$450" },
+    ],
   },
   {
     title: "Wash and Wax",
     services: [{ descriptions: stage2Services[0].descriptions }],
-    price: "2 Door: $120; 4 Door: $140; Small SUV/Truck: $160; SUV/Truck:$200",
+    packagePrices: [
+      { vehicleType: "2 Door", price: "$120" },
+      { vehicleType: "4 Door", price: "$140" },
+      { vehicleType: "Small SUV/Truck", price: "$160" },
+      { vehicleType: "SUV/Truck", price: "$200" },
+    ],
   },
   {
     title: "Deep Interior Detailing",
     services: [{ descriptions: stage2Services[1].descriptions }],
-    price: "2 Door: $250; 4 Door: $300; Small SUV/Truck: $375; SUV/Truck:$450",
+    packagePrices: [
+      { vehicleType: "2 Door", price: "$250" },
+      { vehicleType: "4 Door", price: "$300" },
+      { vehicleType: "Small SUV/Truck", price: "$375" },
+      { vehicleType: "SUV/Truck", price: "$450" },
+    ],
   },
   { title: "Additional Services", services: otherServices },
 ];
