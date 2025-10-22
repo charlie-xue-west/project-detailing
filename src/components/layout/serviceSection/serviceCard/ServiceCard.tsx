@@ -75,14 +75,27 @@ export const ServiceCard = ({
               {descriptions && (
                 <List.Root textAlign={"start"}>
                   {descriptions.map((description) => (
-                    <List.Item key={description}>{description}</List.Item>
+                    <List.Item
+                      key={description}
+                      fontSize={{ base: "small", md: "md", lg: "lg", xl: "xl" }}
+                    >
+                      {description}
+                    </List.Item>
                   ))}
                 </List.Root>
               )}
               {individualPrices && (
-                <Flex gap={4} justifyContent={"center"} alignItems={"center"}>
+                <Flex
+                  gap={{ base: 2, md: 4 }}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                >
                   {individualPrices.map(({ vehicleType, price }) => (
-                    <Text key={vehicleType} color={"#d31920"}>
+                    <Text
+                      key={vehicleType}
+                      color={"#d31920"}
+                      fontSize={{ base: "small", md: "md", lg: "lg", xl: "xl" }}
+                    >
                       {vehicleType}: {price}
                     </Text>
                   ))}
@@ -94,9 +107,17 @@ export const ServiceCard = ({
       </VStack>
 
       {packagePrices && (
-        <Flex gap={4} justifyContent={"center"} alignItems={"center"}>
+        <Flex
+          gap={{ base: 2, md: 4 }}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
           {packagePrices.map(({ vehicleType, price }) => (
-            <Text key={vehicleType} color={"#d31920"}>
+            <Text
+              key={vehicleType}
+              color={"#d31920"}
+              fontSize={{ base: "small", md: "md", lg: "lg", xl: "xl" }}
+            >
               {vehicleType}: {price}
             </Text>
           ))}
