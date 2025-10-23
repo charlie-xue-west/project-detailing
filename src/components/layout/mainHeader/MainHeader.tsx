@@ -11,6 +11,7 @@ import NextLink from "next/link";
 
 export const MainHeader = () => {
   const menuItems = [
+    { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
     { label: "Gallery", href: "/gallery" },

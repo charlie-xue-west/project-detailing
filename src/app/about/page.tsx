@@ -4,15 +4,15 @@ import alexAndNico from "@/assets/about-us-desktop.jpeg";
 import foamTerminate from "@/assets/foam-terminate.jpg";
 import cleanTerminate from "@/assets/clean-terminate.jpg";
 
-export const AboutSection = () => {
+export default function AboutPage() {
   return (
     <Box
-      key="sect-about"
       as={"section"}
       p={4}
       justifyContent={"center"}
       textAlign={"center"}
       bg={"black"}
+      height={"vh"}
     >
       <Flex
         flexDir={"column"}
@@ -25,7 +25,7 @@ export const AboutSection = () => {
           size={{ base: "lg", md: "xl", lg: "2xl", xl: "3xl" }}
           color={"#ededed"}
         >
-          About Us
+          Our Story
         </Heading>
         <Text color={"#ededed"}>
           Alex has loved cars since he was a boy, now he shares that same
@@ -81,4 +81,4 @@ export const AboutSection = () => {
       </Flex>
     </Box>
   );
-};
+}
