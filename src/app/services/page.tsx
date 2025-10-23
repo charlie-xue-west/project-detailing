@@ -1,8 +1,8 @@
+import { ServiceCard } from "@/components/services";
 import { Box, Flex, Grid, Heading } from "@chakra-ui/react";
-import { ServiceCard } from "./serviceCard/ServiceCard";
 import { services } from "./serviceData";
 
-export const ServiceSection = () => {
+export default function ServicesPage() {
   return (
     <Box
       key="sect-about"
@@ -42,4 +42,4 @@ export const ServiceSection = () => {
       </Flex>
     </Box>
   );
-};
+}
