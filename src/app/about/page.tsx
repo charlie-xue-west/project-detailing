@@ -45,7 +45,12 @@ export default function AboutPage() {
             gap={2}
             hideBelow={"lg"}
           >
-            <Image asChild borderRadius={16} maxHeight={"316px"}>
+            <Image
+              asChild
+              alt="Foam Terminator"
+              borderRadius={16}
+              maxHeight={"316px"}
+            >
               <NextImage
                 src={foamTerminate}
                 alt="Foam Terminator"
@@ -55,6 +60,7 @@ export default function AboutPage() {
             </Image>
             <Image
               asChild
+              alt="Clean Terminator"
               borderRadius={16}
               maxWidth={"480px"}
               maxHeight={"316px"}
@@ -68,7 +74,7 @@ export default function AboutPage() {
             </Image>
           </Flex>
 
-          <Image asChild borderRadius={16}>
+          <Image asChild alt="Alex and Nico" borderRadius={16}>
             <NextImage
               src={alexAndNico}
               alt="Alex and Nico"
