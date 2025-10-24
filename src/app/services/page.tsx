@@ -12,7 +12,7 @@ export default function ServicesPage() {
       alignItems={"center"}
       textAlign={"center"}
       bg={"black"}
-      height={"vh"}
+      height={"100%"}
     >
       <Flex flexDirection={"column"} alignItems={"center"} gap={4}>
         <Heading

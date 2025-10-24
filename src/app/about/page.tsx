@@ -12,7 +12,7 @@ export default function AboutPage() {
       justifyContent={"center"}
       textAlign={"center"}
       bg={"black"}
-      height={"vh"}
+      height={"100%"}
     >
       <Flex
         flexDir={"column"}
@@ -28,7 +28,8 @@ export default function AboutPage() {
           Our Story
         </Heading>
         <Text color={"#ededed"}>
-          Alex has loved cars since he was a boy, now he shares that same
+          Alex has loved cars since he was a boy and was obsessed with the
+          classics like Fast and Furious & Initial D. Now he shares that same
           passion and care with all of his clients.
         </Text>
         <Flex

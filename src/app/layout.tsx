@@ -35,7 +35,7 @@ export default function RootLayout({
             <MainHeader />
             <Box as="main" flex="1" w="100%" bg="#ededed">
               <Container
-                p={1}
+                p={0}
                 maxW={"vw"}
                 height={"auto"}
                 gap={1}
