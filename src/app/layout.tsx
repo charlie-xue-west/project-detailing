@@ -33,7 +33,7 @@ export default function RootLayout({
         <Provider>
           <Box minH="100vh" display="flex" flexDirection="column">
             <MainHeader />
-            <Box as="main" flex="1" w="100%" bg="#ededed">
+            <Box as="main" display={"flex"} flex="1" w="100%" bg="#ededed">
               <Container
                 p={0}
                 maxW={"vw"}
@@ -41,6 +41,7 @@ export default function RootLayout({
                 gap={1}
                 display={"flex"}
                 flexDir={"column"}
+                flex={"1"}
               >
                 {children}
               </Container>
